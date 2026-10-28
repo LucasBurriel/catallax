@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "catallax"
+version = "0.1.0"
+description = "Let real prices, not self-grading, decide which agent harness survives."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Lucas Burriel" }]
+requires-python = ">=3.11"
+dependencies = []
+keywords = ["llm", "agents", "harness", "thompson-sampling", "cost", "austrian-economics"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+catallax = "catallax.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/LucasBurriel/catallax"
+
+[tool.setuptools.packages.find]
+include = ["catallax*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
