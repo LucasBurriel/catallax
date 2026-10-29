@@ -35,10 +35,11 @@ USAGE_KEYS = ("input", "output", "cache_read", "cache_write")
 
 # Field names different SDKs use for the same thing.
 _ALIASES = {
-    "input": ("input", "input_tokens", "prompt_tokens"),
-    "output": ("output", "output_tokens", "completion_tokens"),
-    "cache_read": ("cache_read", "cache_read_input_tokens", "cached_tokens"),
-    "cache_write": ("cache_write", "cache_creation_input_tokens"),
+    # snake_case: Anthropic/OpenAI API bodies; camelCase: Claude Code's `--output-format json` modelUsage
+    "input": ("input", "input_tokens", "prompt_tokens", "inputTokens"),
+    "output": ("output", "output_tokens", "completion_tokens", "outputTokens"),
+    "cache_read": ("cache_read", "cache_read_input_tokens", "cached_tokens", "cacheReadInputTokens"),
+    "cache_write": ("cache_write", "cache_creation_input_tokens", "cacheCreationInputTokens"),
 }
 
 
